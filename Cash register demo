@@ -1,0 +1,22 @@
+public class CashRegister {
+    private static final double TAX_RATE = 0.06;
+    private double retail;
+    private int quantity;
+
+    public CashRegister(RetailItem item, int q) {
+        this.retail = item.getRetail();
+        this.quantity = q;
+    }
+
+    public double getSubtotal() {
+        return retail * quantity;
+    }
+
+    public double getTax() {
+        return getSubtotal() * TAX_RATE;
+    }
+
+    public double getTotal() {
+        return getSubtotal() + getTax();
+    }
+}
